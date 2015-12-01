@@ -2,7 +2,6 @@ package main.java.domain;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -17,7 +16,6 @@ public class User extends BaseDomain
     private String password;
 
     @Id
-    @GeneratedValue
     @Column(name = "user_id")
     public long getUserId()
     {
