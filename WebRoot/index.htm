@@ -1,10 +1,80 @@
 <!DOCTYPE html>
 <html>
-<head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-</head>
-<body>
-index
-</body>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>Index</title>
+		<style>
+			* {
+				font-family: "courier new";
+			}
+			
+			pre {
+				word-break: break-word;
+			}
+			
+			.response {
+				border: solid 1px lightgray;
+				background: linen;
+				min-height: 2em;
+				margin: 1em 0;
+			}
+		</style>
+	</head>
+
+	<body>
+		<h2>FindAllUsers</h2>
+		<button onclick="findAll();">find</button>
+		<pre id="response1" class="response"></pre>
+		<hr />
+		<h2>Login</h2>
+		<form id="form2">
+			<p>Username:
+				<input type="text" name="userName" />
+			</p>
+			<p>Password:
+				<input type="password" name="password" />
+			</p>
+			<input type="button" onclick="login();" value="login" />
+		</form>
+		<pre id="response2" class="response"></pre>
+		<hr />
+		<h2>Register</h2>
+		<form id="form3">
+			<p>Username:
+				<input type="text" name="userName" />
+			</p>
+			<p>Password:
+				<input type="password" name="password" />
+			</p>
+			<input type="button" onclick="register();" value="register" />
+		</form>
+		<pre id="response3" class="response"></pre>
+		<script>
+			function findAll() {
+				xmlhttp = new XMLHttpRequest();
+				xmlhttp.open("GET", "/Alpha/user", false);
+				xmlhttp.send();
+				$('#response1').text(JSON.stringify(JSON.parse(xmlhttp.responseText), null, 4));
+			}
+
+			function login() {
+				data = $('#form2').serialize();
+				xmlhttp = new XMLHttpRequest();
+				xmlhttp.open("GET", "/Alpha/user/login?" + data, false);
+				xmlhttp.send();
+				$('#response2').text(xmlhttp.responseText);
+			}
+
+			function register() {
+				data = $('#form3').serialize();
+				xmlhttp = new XMLHttpRequest();
+				xmlhttp.open("POST", "/Alpha/user/register?" + data, false);
+				xmlhttp.send();
+				$('#response3').text(xmlhttp.responseText);
+			}
+		</script>
+		<script src="http://libs.baidu.com/jquery/2.1.4/jquery.min.js"></script>
+	</body>
+
 </html>
