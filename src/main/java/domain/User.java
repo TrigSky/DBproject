@@ -3,6 +3,7 @@ package main.java.domain;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -11,25 +12,24 @@ import javax.persistence.Table;
 public class User extends BaseDomain
 {
     private static final long serialVersionUID = 1L;
-    
-    private long userId;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "user_id")
+    private String userId;
+    @Column(name = "user_name")
     private String userName;
     private String password;
 
-    @Id
-    @GeneratedValue
-    @Column(name = "user_id")
-    public long getUserId()
+    public String getUserId()
     {
         return userId;
     }
 
-    public void setUserId(long userId)
+    public void setUserId(String userId)
     {
         this.userId = userId;
     }
 
-    @Column(name = "user_name")
     public String getUserName()
     {
         return userName;

@@ -66,7 +66,7 @@ public class UserController
         else
         {
             user = new User();
-            user.setUserId(new Random().nextInt(10));
+            user.setUserId("tempId" + new Random().nextInt(10));
             user.setUserName(userName);
             user.setPassword(password);
             userService.saveUser(user);
