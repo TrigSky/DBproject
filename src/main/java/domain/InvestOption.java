@@ -10,7 +10,7 @@ import javax.persistence.Table;
 public class InvestOption
 {
     @Id
-    private String uuid;
+    private int uuid;
     private double price;
     private String title;
     private String detail;
@@ -19,12 +19,12 @@ public class InvestOption
     @Column(name = "peo_num")
     private int peopleNum;
 
-    public String getUuid()
+    public int getUuid()
     {
         return uuid;
     }
 
-    public void setUuid(String uuid)
+    public void setUuid(int uuid)
     {
         this.uuid = uuid;
     }
