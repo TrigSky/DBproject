@@ -31,7 +31,7 @@ public class UserService
 
     public void saveUser(User user)
     {
-        userDao.savaUser(user);
+        userDao.saveUser(user);
     }
 
     public List<User> findAll()

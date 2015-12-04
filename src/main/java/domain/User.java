@@ -1,36 +1,33 @@
 package main.java.domain;
 
-import java.util.Date;
-
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
 @Table(name = "user")
 public class User extends BaseDomain
 {
     private static final long serialVersionUID = 1L;
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "user_id")
-    private String userId;
-    @Column(name = "user_name")
+    
+    private long userId;
     private String userName;
     private String password;
-    @Column(name = "last_ip")
-    private String lastIp;
-    @Column(name = "last_visit")
-    private Date lastVisit;
 
-    public String getUserId()
+    @Id
+    @Column(name = "user_id")
+    public long getUserId()
     {
         return userId;
     }
 
-    public void setUserId(String userId)
+    public void setUserId(long userId)
     {
         this.userId = userId;
     }
 
+    @Column(name = "user_name")
     public String getUserName()
     {
         return userName;
@@ -49,30 +46,5 @@ public class User extends BaseDomain
     public void setPassword(String password)
     {
         this.password = password;
-    }
-
-    public String getLastIp()
-    {
-        return lastIp;
-    }
-
-    public void setLastIp(String lastIp)
-    {
-        this.lastIp = lastIp;
-    }
-
-    public Date getLastVisit()
-    {
-        return lastVisit;
-    }
-
-    public void setLastVisit(Date lastVisit)
-    {
-        this.lastVisit = lastVisit;
-    }
-
-    public static long getSerialversionuid()
-    {
-        return serialVersionUID;
     }
 }
