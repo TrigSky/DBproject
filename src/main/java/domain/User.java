@@ -10,10 +10,10 @@ import javax.persistence.Table;
 public class User extends BaseDomain {
 	private static final long serialVersionUID = 1L;
 
-
-	private int ID;
+	private long userId;
+	private String userName;
+	private String password;
 	private String UUID;
-	private String name;
 	private String wechat;
 	private String exInfo;
 	private String sex;
@@ -29,31 +29,48 @@ public class User extends BaseDomain {
 	private String party;
 
 	@Id
-	@Column(name = "id")
-	public int getID() {
-		return ID;
+	@Column(name = "user_id")
+	public long getUserId() 
+	{
+		return userId;
 	}
 
-	public void setID(int iD) {
-		ID = iD;
+	public void setUserId(long userId) 
+	{
+		this.userId = userId;
+	}
+
+	@Column(name = "user_name")
+	public String getUserName() 
+	{
+		return userName;
+	}
+
+	public void setUserName(String userName) 
+	{
+		this.userName = userName;
+	}
+
+	@Column(name = "password")
+	public String getPassword() 
+	{
+		return password;
+	}
+
+	public void setPassword(String password) 
+	{
+		this.password = password;
 	}
 
 	@Column(name = "uuid")
-	public String getUUID() {
+	public String getUUID() 
+	{
 		return UUID;
 	}
 
-	public void setUUID(String uUID) {
+	public void setUUID(String uUID) 
+	{
 		UUID = uUID;
-	}
-
-	@Column(name = "name")
-	public String getName() {
-		return name;
-	}
-
-	public void setName(String name) {
-		name = name;
 	}
 
 	@Column(name = "wechat")
@@ -61,34 +78,41 @@ public class User extends BaseDomain {
 		return wechat;
 	}
 
-	public void setWechat(String wechat) {
+	public void setWechat(String wechat) 
+	{
 		this.wechat = wechat;
 	}
 
 	@Column(name = "extroinfo")
-	public String getExInfo() {
+	public String getExInfo() 
+	{
 		return exInfo;
 	}
 
-	public void setExInfo(String exInfo) {
+	public void setExInfo(String exInfo) 
+	{
 		this.exInfo = exInfo;
 	}
 
 	@Column(name = "sex")
-	public String getSex() {
+	public String getSex() 
+	{
 		return sex;
 	}
 
-	public void setSex(String sex) {
+	public void setSex(String sex) 
+	{
 		this.sex = sex;
 	}
 
 	@Column(name = "short_descri")
-	public String getShorDes() {
+	public String getShorDes() 
+	{
 		return shorDes;
 	}
 
-	public void setShorDes(String shorDes) {
+	public void setShorDes(String shorDes) 
+	{
 		this.shorDes = shorDes;
 	}
 
@@ -102,74 +126,90 @@ public class User extends BaseDomain {
 	}
 
 	@Column(name = "level")
-	public String getLevel() {
+	public String getLevel() 
+	{
 		return level;
 	}
 
-	public void setLevel(String level) {
+	public void setLevel(String level) 
+	{
 		this.level = level;
 	}
 
 	@Column(name = "job_in")
-	public String getJobIn() {
+	public String getJobIn() 
+	{
 		return jobIn;
 	}
 
-	public void setJobIn(String jobIn) {
+	public void setJobIn(String jobIn) 
+	{
 		this.jobIn = jobIn;
 	}
 
 	@Column(name = "project_num")
-	public String getProjectNum() {
+	public String getProjectNum() 
+	{
 		return projectNum;
 	}
 
-	public void setProjectNum(String projectNum) {
+	public void setProjectNum(String projectNum) 
+	{
 		this.projectNum = projectNum;
 	}
 
 	@Column(name = "star_num")
-	public String getStarsNum() {
+	public String getStarsNum() 
+	{
 		return starsNum;
 	}
 
-	public void setStarsNum(String starsNum) {
+	public void setStarsNum(String starsNum) 
+	{
 		this.starsNum = starsNum;
 	}
 
 	@Column(name = "img_url")
-	public String getImg() {
+	public String getImg() 
+	{
 		return img;
 	}
 
-	public void setImg(String img) {
+	public void setImg(String img) 
+	{
 		this.img = img;
 	}
 
 	@Column(name = "project")
-	public String getProject() {
+	public String getProject() 
+	{
 		return project;
 	}
 
-	public void setProject(String project) {
+	public void setProject(String project) 
+	{
 		this.project = project;
 	}
 
 	@Column(name = "party_num")
-	public String getPartyNum() {
+	public String getPartyNum() 
+	{
 		return partyNum;
 	}
 
-	public void setPartyNum(String partyNum) {
+	public void setPartyNum(String partyNum) 
+	{
 		this.partyNum = partyNum;
 	}
 
 	@Column(name = "party")
-	public String getParty() {
+	public String getParty() 
+	{
 		return party;
 	}
 
-	public void setParty(String party) {
+	public void setParty(String party) 
+	{
 		this.party = party;
 	}
 }
