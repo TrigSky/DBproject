@@ -14,23 +14,24 @@ public class Crowdfunding
     @Id
     @Column(name = "cf_id")
     private int crowdfundingId;
+    private String author;
     private String title;
     private String location;
-    @Column(name = "peo_num")
-    private int peoNum;
-    @Column(name = "man_target")
+    @Column(name = "max_people_num")
+    private int maxPeopleNum;
+    @Column(name = "max_target")
     private double maxTarget;
     @Column(name = "min_target")
     private double minTarget;
-    @Column(name = "time_post")
-    private Date timePost;
-    @Column(name = "time_limit")
-    private Date timeLimit;
-    @Column(name = "imagpre_url")
-    private String imagPreUrl;
+    @Column(name = "post_date")
+    private Date postDate;
+    @Column(name = "due_date")
+    private Date dueDate;
+    @Column(name = "cover_url")
+    private String coverUrl;
     private String type;
-    @Column(name = "imag_num")
-    private int imagNum;
+    @Column(name = "img_num")
+    private int imgNum;
     @Column(name = "web_url")
     private String webUrl;
     private String latitude;
@@ -49,6 +50,16 @@ public class Crowdfunding
     public void setCrowdfundingId(int crowdfundingId)
     {
         this.crowdfundingId = crowdfundingId;
+    }
+
+    public String getAuthor()
+    {
+        return author;
+    }
+
+    public void setAuthor(String author)
+    {
+        this.author = author;
     }
 
     public String getTitle()
@@ -71,14 +82,14 @@ public class Crowdfunding
         this.location = location;
     }
 
-    public int getPeoNum()
+    public int getMaxPeopleNum()
     {
-        return peoNum;
+        return maxPeopleNum;
     }
 
-    public void setPeoNum(int peoNum)
+    public void setMaxPeopleNum(int maxPeopleNum)
     {
-        this.peoNum = peoNum;
+        this.maxPeopleNum = maxPeopleNum;
     }
 
     public double getMaxTarget()
@@ -101,34 +112,34 @@ public class Crowdfunding
         this.minTarget = minTarget;
     }
 
-    public Date getTimePost()
+    public Date getPostDate()
     {
-        return timePost;
+        return postDate;
     }
 
-    public void setTimePost(Date timePost)
+    public void setPostDate(Date postDate)
     {
-        this.timePost = timePost;
+        this.postDate = postDate;
     }
 
-    public Date getTimeLimit()
+    public Date getDueDate()
     {
-        return timeLimit;
+        return dueDate;
     }
 
-    public void setTimeLimit(Date timeLimit)
+    public void setDueDate(Date dueDate)
     {
-        this.timeLimit = timeLimit;
+        this.dueDate = dueDate;
     }
 
-    public String getImagPreUrl()
+    public String getCoverUrl()
     {
-        return imagPreUrl;
+        return coverUrl;
     }
 
-    public void setImagPreUrl(String imagPreUrl)
+    public void setCoverUrl(String coverUrl)
     {
-        this.imagPreUrl = imagPreUrl;
+        this.coverUrl = coverUrl;
     }
 
     public String getType()
@@ -141,14 +152,14 @@ public class Crowdfunding
         this.type = type;
     }
 
-    public int getImagNum()
+    public int getImgNum()
     {
-        return imagNum;
+        return imgNum;
     }
 
-    public void setImagNum(int imagNum)
+    public void setImgNum(int imgNum)
     {
-        this.imagNum = imagNum;
+        this.imgNum = imgNum;
     }
 
     public String getWebUrl()
@@ -201,13 +212,13 @@ public class Crowdfunding
         this.shareNum = shareNum;
     }
 
-    public int getInveNum()
+    public int getInvestNum()
     {
         return investNum;
     }
 
-    public void setInveNum(int inveNum)
+    public void setInvestNum(int investNum)
     {
-        this.investNum = inveNum;
+        this.investNum = investNum;
     }
 }

@@ -27,49 +27,49 @@ public class BaseDao<T>
         entityClass = (Class) params[0];
     }
 
-    public T load(Serializable id)
+    protected T load(Serializable id)
     {
         return (T) getHibernateTemplate().load(entityClass, id);
     }
 
-    public T get(Serializable id)
+    protected T get(Serializable id)
     {
         return (T) getHibernateTemplate().get(entityClass, id);
     }
 
-    public List<T> loadAll()
+    protected List<T> loadAll()
     {
         return getHibernateTemplate().loadAll(entityClass);
     }
 
-    public void save(T entity)
+    protected void save(T entity)
     {
         getHibernateTemplate().save(entity);
     }
 
-    public void remove(T entity)
+    protected void remove(T entity)
     {
         getHibernateTemplate().delete(entity);
     }
 
-    public void update(T entity)
+    protected void update(T entity)
     {
         getHibernateTemplate().update(entity);
     }
 
     @SuppressWarnings("rawtypes")
-    public List find(String hql)
+    protected List find(String hql)
     {
         return getHibernateTemplate().find(hql);
     }
     
     @SuppressWarnings("rawtypes")
-    public List find(String hql, Object... params)
+    protected List find(String hql, Object... params)
     {
         return getHibernateTemplate().find(hql, params);
     }
 
-    public void initialize(Object entity)
+    protected void initialize(Object entity)
     {
         getHibernateTemplate().initialize(entity);
     }

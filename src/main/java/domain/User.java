@@ -7,222 +7,185 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "user")
-public class User extends BaseDomain {
-	private static final long serialVersionUID = 1L;
+public class User
+{
+    @Id
+    @Column(name = "user_id")
+    private long userId;
+    @Column(name = "user_name")
+    private String userName;
+    private String password;
+    private String wechat;
+    private String extraInfo;
+    private String sex;
+    private String shortDesc;
+    private String job;
+    private String level;
+    private String jobIn;
+    private String projectNum;
+    private String starNum;
+    private String img;
+    private String project;
+    private String partyNum;
+    private String party;
 
-	private int ID;
-	private String UUID;
-	private String Name;
-	private String Wechat;
-	private String ExInfo;
-	private String Sex;
-	private String ShorDes;
-	private String Job;
-	private String Level;
-	private String JobIn;
-	private String ProjectNum;
-	private String StarsNum;
-	private String Img;
-	private String Project;
-	private String PartyNum;
-	private String Party;
+    public long getUserId()
+    {
+        return userId;
+    }
 
-	@Id
-	@Column(name = "id")
-	public int getID() {
-		return ID;
-	}
+    public void setUserId(long userId)
+    {
+        this.userId = userId;
+    }
 
-	public void setID(int iD) {
-		ID = iD;
-	}
+    public String getUserName()
+    {
+        return userName;
+    }
 
-	@Column(name = "uuid")
-	public String getUUID() {
-		return UUID;
-	}
+    public void setUserName(String userName)
+    {
+        this.userName = userName;
+    }
 
-	public void setUUID(String uUID) {
-		UUID = uUID;
-	}
+    public String getPassword()
+    {
+        return password;
+    }
 
-	@Column(name = "name")
-	public String getName() {
-		return Name;
-	}
+    public void setPassword(String password)
+    {
+        this.password = password;
+    }
 
-	public void setName(String name) {
-		Name = name;
-	}
+    public String getWechat()
+    {
+        return wechat;
+    }
 
-	@Column(name = "wechat")
-	public String getWechat() {
-		return Wechat;
-	}
+    public void setWechat(String wechat)
+    {
+        this.wechat = wechat;
+    }
 
-	public void setWechat(String wechat) {
-		Wechat = wechat;
-	}
+    public String getExtraInfo()
+    {
+        return extraInfo;
+    }
 
-	@Column(name = "extroinfo")
-	public String getExInfo() {
-		return ExInfo;
-	}
+    public void setExtraInfo(String extraInfo)
+    {
+        this.extraInfo = extraInfo;
+    }
 
-	public void setExInfo(String exInfo) {
-		ExInfo = exInfo;
-	}
+    public String getSex()
+    {
+        return sex;
+    }
 
-	@Column(name = "sex")
-	public String getSex() {
-		return Sex;
-	}
+    public void setSex(String sex)
+    {
+        this.sex = sex;
+    }
 
-	public void setSex(String sex) {
-		Sex = sex;
-	}
+    public String getShortDesc()
+    {
+        return shortDesc;
+    }
 
-	@Column(name = "short_descri")
-	public String getShorDes() {
-		return ShorDes;
-	}
+    public void setShortDesc(String shortDesc)
+    {
+        this.shortDesc = shortDesc;
+    }
 
-	public void setShorDes(String shorDes) {
-		ShorDes = shorDes;
-	}
+    public String getJob()
+    {
+        return job;
+    }
 
-	/**
-	 * @return the job
-	 */
-	public String getJob() {
-		return Job;
-	}
+    public void setJob(String job)
+    {
+        this.job = job;
+    }
 
-	/**
-	 * @param job
-	 *            the job to set
-	 */
-	public void setJob(String job) {
-		Job = job;
-	}
+    public String getLevel()
+    {
+        return level;
+    }
 
-	/**
-	 * @return the level
-	 */
-	public String getLevel() {
-		return Level;
-	}
+    public void setLevel(String level)
+    {
+        this.level = level;
+    }
 
-	/**
-	 * @param level
-	 *            the level to set
-	 */
-	public void setLevel(String level) {
-		Level = level;
-	}
+    public String getJobIn()
+    {
+        return jobIn;
+    }
 
-	/**
-	 * @return the jobIn
-	 */
-	public String getJobIn() {
-		return JobIn;
-	}
+    public void setJobIn(String jobIn)
+    {
+        this.jobIn = jobIn;
+    }
 
-	/**
-	 * @param jobIn
-	 *            the jobIn to set
-	 */
-	public void setJobIn(String jobIn) {
-		JobIn = jobIn;
-	}
+    public String getProjectNum()
+    {
+        return projectNum;
+    }
 
-	/**
-	 * @return the projectNum
-	 */
-	public String getProjectNum() {
-		return ProjectNum;
-	}
+    public void setProjectNum(String projectNum)
+    {
+        this.projectNum = projectNum;
+    }
 
-	/**
-	 * @param projectNum
-	 *            the projectNum to set
-	 */
-	public void setProjectNum(String projectNum) {
-		ProjectNum = projectNum;
-	}
+    public String getStarNum()
+    {
+        return starNum;
+    }
 
-	/**
-	 * @return the starsNum
-	 */
-	public String getStarsNum() {
-		return StarsNum;
-	}
+    public void setStarNum(String starNum)
+    {
+        this.starNum = starNum;
+    }
 
-	/**
-	 * @param starsNum
-	 *            the starsNum to set
-	 */
-	public void setStarsNum(String starsNum) {
-		StarsNum = starsNum;
-	}
+    public String getImg()
+    {
+        return img;
+    }
 
-	/**
-	 * @return the img
-	 */
-	public String getImg() {
-		return Img;
-	}
+    public void setImg(String img)
+    {
+        this.img = img;
+    }
 
-	/**
-	 * @param img
-	 *            the img to set
-	 */
-	public void setImg(String img) {
-		Img = img;
-	}
+    public String getProject()
+    {
+        return project;
+    }
 
-	/**
-	 * @return the project
-	 */
-	public String getProject() {
-		return Project;
-	}
+    public void setProject(String project)
+    {
+        this.project = project;
+    }
 
-	/**
-	 * @param project
-	 *            the project to set
-	 */
-	public void setProject(String project) {
-		Project = project;
-	}
+    public String getPartyNum()
+    {
+        return partyNum;
+    }
 
-	/**
-	 * @return the partyNum
-	 */
-	public String getPartyNum() {
-		return PartyNum;
-	}
+    public void setPartyNum(String partyNum)
+    {
+        this.partyNum = partyNum;
+    }
 
-	/**
-	 * @param partyNum
-	 *            the partyNum to set
-	 */
-	public void setPartyNum(String partyNum) {
-		PartyNum = partyNum;
-	}
+    public String getParty()
+    {
+        return party;
+    }
 
-	/**
-	 * @return the party
-	 */
-	public String getParty() {
-		return Party;
-	}
-
-	/**
-	 * @param party
-	 *            the party to set
-	 */
-	public void setParty(String party) {
-		Party = party;
-	}
+    public void setParty(String party)
+    {
+        this.party = party;
+    }
 }

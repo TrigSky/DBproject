@@ -3,6 +3,8 @@ package main.java.domain;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -14,10 +16,11 @@ public class InvestOption
     private double price;
     private String title;
     private String detail;
-    @Column(name = "imgs_arr")
-    private String imgsArr;
-    @Column(name = "peo_num")
+    @Column(name = "people_num")
     private int peopleNum;
+    @ManyToOne(targetEntity = Crowdfunding.class)
+    @JoinColumn(name = "cf_id")
+    private int crowdfundingId;
 
     public int getUuid()
     {
@@ -59,16 +62,6 @@ public class InvestOption
         this.detail = detail;
     }
 
-    public String getImgsArr()
-    {
-        return imgsArr;
-    }
-
-    public void setImgsArr(String imgsArr)
-    {
-        this.imgsArr = imgsArr;
-    }
-
     public int getPeopleNum()
     {
         return peopleNum;
@@ -77,5 +70,15 @@ public class InvestOption
     public void setPeopleNum(int peopleNum)
     {
         this.peopleNum = peopleNum;
+    }
+
+    public int getCrowdfundingId()
+    {
+        return crowdfundingId;
+    }
+
+    public void setCrowdfundingId(int crowdfundingId)
+    {
+        this.crowdfundingId = crowdfundingId;
     }
 }
